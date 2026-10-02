@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutTopNavBar"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:background="@color/card_background"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="4dp">
+
+    <FrameLayout
+        android:id="@+id/tab_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_tab_home"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:contentDescription="Home"
+            android:src="@drawable/ic_tab_home"
+            app:tint="@color/primary_teal" />
+
+        <View
+            android:id="@+id/indicator_home"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="bottom"
+            android:background="@color/primary_teal"
+            android:visibility="visible" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_friends"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_tab_friends"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:contentDescription="Friends"
+            android:src="@drawable/ic_tab_friends"
+            app:tint="@color/icon_grey" />
+
+        <View
+            android:id="@+id/indicator_friends"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="bottom"
+            android:background="@color/primary_teal"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_marketplace"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_tab_marketplace"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:contentDescription="Marketplace"
+            android:src="@drawable/ic_tab_marketplace"
+            app:tint="@color/icon_grey" />
+
+        <View
+            android:id="@+id/indicator_marketplace"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="bottom"
+            android:background="@color/primary_teal"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_notifications"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_tab_notifications"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:contentDescription="Notifications"
+            android:src="@drawable/ic_tab_notifications"
+            app:tint="@color/icon_grey" />
+
+        <!-- Notification Badge "5" -->
+        <TextView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_badge_small_red"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/indicator_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="bottom"
+            android:background="@color/primary_teal"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tab_menu"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/iv_tab_menu"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:contentDescription="Menu"
+            android:src="@drawable/ic_tab_menu"
+            app:tint="@color/icon_grey" />
+
+        <View
+            android:id="@+id/indicator_menu"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="bottom"
+            android:background="@color/primary_teal"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

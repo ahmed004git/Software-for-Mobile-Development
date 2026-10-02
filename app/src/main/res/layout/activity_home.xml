@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <!-- Header Bar with Kinnect Logo & Action Icons -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/card_background"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="kinnect"
+            android:textColor="@color/primary_teal"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <!-- Search Chip -->
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip"
+                android:contentDescription="Search"
+                android:padding="9dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/text_primary" />
+
+            <!-- Chat/Messenger Chip with Red Badge "3" -->
+            <FrameLayout
+                android:id="@+id/btnChat"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/bg_chip"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Chats"
+                    android:src="@drawable/ic_chat"
+                    app:tint="@color/text_primary" />
+
+                <!-- Badge 3 -->
+                <TextView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_badge_small_red"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Top Navigation Bar -->
+    <include layout="@layout/layout_top_nav_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- "What's on your mind?" Input Bar -->
+            <LinearLayout
+                android:id="@+id/layoutCreatePost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/card_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/ivProfileAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:gravity="center"
+                    android:text="JW"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <!-- Rounded Input Capsule -->
+                <TextView
+                    android:id="@+id/tvWhatsOnYourMind"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_comment_input"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:text="What's on your mind, Jacob?"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <!-- Photo Icon -->
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Photo"
+                    android:src="@drawable/ic_photo"
+                    app:tint="@color/primary_teal" />
+
+            </LinearLayout>
+
+            <!-- Stories Scroll Row -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/card_background"
+                android:paddingVertical="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp">
+
+                    <!-- Card 1: Create Story -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btnCreateStory"
+                        android:layout_width="105dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Top Light Teal Part -->
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:background="#E0EFEF">
+
+                                <TextView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/bg_avatar_circle"
+                                    android:gravity="center"
+                                    android:text="JW"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+
+                            <!-- Bottom White Card Part -->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/card_background">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="6dp"
+                                    android:text="Create story"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <!-- Overlapping Plus Badge -->
+                            <FrameLayout
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="86dp"
+                                android:background="@drawable/bg_avatar_circle">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="Add"
+                                    android:src="@drawable/ic_plus"
+                                    app:tint="@color/white" />
+                            </FrameLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card 2: Omar Farooq -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/storyItem1"
+                        android:layout_width="105dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#223147">
+
+                            <!-- Top-Left Avatar "OF" -->
+                            <TextView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/bg_avatar_circle"
+                                android:gravity="center"
+                                android:text="OF"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_margin="8dp"
+                                android:text="Omar Farooq"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card 3: Sara Iqbal -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/storyItem2"
+                        android:layout_width="105dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#C49283">
+
+                            <!-- Top-Left Avatar "SI" -->
+                            <TextView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/bg_avatar_circle"
+                                android:gravity="center"
+                                android:text="SI"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_margin="8dp"
+                                android:text="Sara Iqbal"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card 4: Hamza ... -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="105dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#8AA07B">
+
+                            <!-- Top-Left Avatar "HA" -->
+                            <TextView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/bg_avatar_circle"
+                                android:gravity="center"
+                                android:text="HA"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_margin="8dp"
+                                android:text="Hamza ..."
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Post Card (Lina Marsh - Multi-Photo Post) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/card_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Post Header -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/postUserAvatar"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentStart="true"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:gravity="center"
+                        android:text="LM"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/postUserAvatar"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/postUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lina Marsh is at Clifton Beach"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="2h · 🌐"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="12dp"
+                            android:contentDescription="More"
+                            android:src="@drawable/ic_more_dots"
+                            app:tint="@color/icon_grey" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="✕"
+                            android:textColor="@color/icon_grey"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- Post Text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Sunset walk with the crew. Worth every grain of sand in my shoes."
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+
+                <!-- Multi-Photo Collage Grid -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <!-- Left Large Image (Sand dune artwork with sun) -->
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:background="#DBC8AC">
+
+                        <View
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="24dp"
+                            android:background="@drawable/bg_avatar_circle"
+                            android:backgroundTint="#FDF0CD" />
+                    </FrameLayout>
+
+                    <!-- Right Column (2 Stacked Images) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="3dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Top Right Image (Ocean/sky artwork with sun) -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="3dp"
+                            android:layout_weight="1"
+                            android:background="#92B2B3">
+
+                            <View
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="16dp"
+                                android:background="@drawable/bg_avatar_circle"
+                                android:backgroundTint="#FDF0CD" />
+                        </FrameLayout>
+
+                        <!-- Bottom Right Image (+4 Overlay) -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:background="#5B4E63">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="+4"
+                                android:textColor="@color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Engagement Stats Bar -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Aisha and 1.2K others"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="86 comments · 12 shares"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/card_stroke" />
+
+                <!-- Action Buttons (Like, Comment, Share) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/btnReaction"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="Like"
+                            android:src="@drawable/ic_like"
+                            app:tint="@color/text_secondary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="Like"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnComment"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="Comment"
+                            android:src="@drawable/ic_comment"
+                            app:tint="@color/text_secondary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="Comment"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnShare"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="Share"
+                            android:src="@drawable/ic_share"
+                            app:tint="@color/text_secondary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="Share"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
