@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1B1A"
+    android:orientation="vertical"
+    tools:context=".YourStoryActivity">
+
+    <!-- Your Story Canvas Area -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#C2D1B2">
+
+        <!-- Bottom Hills Illustration Background -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true"
+            android:background="#8FA978" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_alignParentBottom="true"
+            android:background="#6C8655" />
+
+        <!-- Pale Yellow Sun -->
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#FDF0CD" />
+
+        <!-- Top Progress Bar Segment -->
+        <View
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white" />
+
+        <!-- Top Author Bar -->
+        <RelativeLayout
+            android:id="@+id/layoutAuthorBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/progressBar"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/tvAuthorAvatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#0B5F63"
+                android:gravity="center"
+                android:text="JW"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/tvAuthorAvatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your story"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11h · Close friends"
+                    android:textColor="#B0FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Close"
+                android:rotation="180"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <!-- Center Text Sticker: "Saturday plans" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="28dp"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="#A73319"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:text="Saturday plans"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Floating Heart Reactions Stack on Bottom Left -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:text="❤️"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:text="❤️"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:text="❤️"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:text="❤️"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:text="❤️"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Bottom Actions & Viewers Bar (Black Background) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#111111"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp">
+
+        <!-- Seen by 24 Pill -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="#2E2B29"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp">
+
+            <!-- Avatars Stack -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#8B263E"
+                    android:gravity="center"
+                    android:text="AK"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="-8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#5B3E8C"
+                    android:gravity="center"
+                    android:text="LM"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="-8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#1E5631"
+                    android:gravity="center"
+                    android:text="OF"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvViewersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Seen by 24"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Create, Highlight, Send, More Icons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Create"
+                    android:src="@drawable/ic_edit"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Create"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Highlight"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Highlight"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Send"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Send"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="More"
+                    android:src="@drawable/ic_more_dots"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="More"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

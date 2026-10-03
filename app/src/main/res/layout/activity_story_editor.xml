@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1B1A"
+    android:orientation="vertical"
+    tools:context=".StoryEditorActivity">
+
+    <!-- Story Canvas Preview Area -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#C2D1B2">
+
+        <!-- Top Hills / Sun Illustration Background -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true"
+            android:background="#8FA978" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_alignParentBottom="true"
+            android:background="#6C8655" />
+
+        <!-- Pale Yellow Sun -->
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#FDF0CD" />
+
+        <!-- Top Editing Tools Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:paddingHorizontal="16dp">
+
+            <!-- Close (X) Button -->
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#60000000"
+                android:contentDescription="Close"
+                android:padding="10dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <!-- Editing Tools Right Group -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <!-- Tag Tool -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#60000000"
+                    android:contentDescription="Tag"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/white" />
+
+                <!-- Text Tool (Aa) -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#60000000"
+                    android:contentDescription="Text"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_edit"
+                    app:tint="@color/white" />
+
+                <!-- Emoji Tool -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#60000000"
+                    android:contentDescription="Sticker"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_info_circle"
+                    app:tint="@color/white" />
+
+                <!-- Music Tool -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#60000000"
+                    android:contentDescription="Music"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/white" />
+
+                <!-- Sparkles Tool -->
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#60000000"
+                    android:contentDescription="Effects"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Center Text Sticker: "Saturday plans" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="28dp"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="#A73319"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:text="Saturday plans"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Bottom Sharing Bar (Black Background) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#111111"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <!-- Your Story Button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="#2E2B29"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp">
+
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_avatar_circle"
+                android:gravity="center"
+                android:text="JW"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Your story"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Close Friends Button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="#2E2B29"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp">
+
+            <FrameLayout
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#388E3C">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Star"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Close friends"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Teal Forward Arrow Button -->
+        <FrameLayout
+            android:id="@+id/btnShareStory"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="@color/teal_primary"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:contentDescription="Share"
+                android:rotation="180"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

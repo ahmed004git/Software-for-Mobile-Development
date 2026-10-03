@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1B1A"
+    android:orientation="vertical"
+    tools:context=".StoryViewerActivity">
+
+    <!-- Story Viewer Canvas Area -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#223147">
+
+        <!-- Bottom Hills Illustration Background -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1A2636" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="true"
+            android:background="#111B29" />
+
+        <!-- Pale Yellow Sun -->
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#FDF0CD" />
+
+        <!-- Top Progress Segments -->
+        <LinearLayout
+            android:id="@+id/layoutProgress"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:background="@color/white" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="#80FFFFFF" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="#80FFFFFF" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="#80FFFFFF" />
+        </LinearLayout>
+
+        <!-- Top Author Bar -->
+        <RelativeLayout
+            android:id="@+id/layoutAuthorBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/layoutProgress"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/tvAuthorAvatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#1E5631"
+                android:gravity="center"
+                android:text="OF"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/tvAuthorAvatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Omar Farooq"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5h · 🌐"
+                    android:textColor="#B0FFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="More"
+                    android:src="@drawable/ic_more_dots"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/btnClose"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Close"
+                    android:src="@drawable/ic_back"
+                    android:rotation="180"
+                    app:tint="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Center Text Sticker: "Karachi nights" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="48dp"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="@color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            android:text="Karachi nights"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Bottom Reactions & Messaging Bar (Black Background) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#111111"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <!-- Send Message Input Box -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_comment_input"
+            android:backgroundTint="#2E2B29"
+            android:hint="Send message..."
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="#999999"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="horizontal">
+
+            <!-- Thumbs Up Reaction -->
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#0084FF">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Like"
+                    android:src="@drawable/ic_thumb_up"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Heart Reaction -->
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_circle_red">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="❤️"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+            <!-- Smiley Reaction -->
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#FFA726">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="😊"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
