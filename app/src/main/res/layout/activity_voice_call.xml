@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_teal"
+    tools:context=".VoiceCallActivity">
+
+    <!-- Top End-to-End Encryption Notice -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="6dp"
+            android:contentDescription="Encrypted"
+            android:src="@drawable/ic_search"
+            app:tint="#B0FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End-to-end encrypted"
+            android:textColor="#B0FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Center Avatar & Caller Info -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Outer Glow Ring -->
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#256E72">
+
+            <!-- Middle Glow Ring -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_avatar_circle"
+                android:backgroundTint="#408488">
+
+                <!-- Inner Avatar AM -->
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_avatar_circle"
+                    android:backgroundTint="#7B1FA2"
+                    android:gravity="center"
+                    android:text="AM"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <!-- Caller Name with Heart -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvCallerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ammi"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="❤️"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Call Duration Timer -->
+        <TextView
+            android:id="@+id/tvCallStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="03:12"
+            android:textColor="#E0EFEF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Bottom Controls Bar (4 Buttons) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp">
+
+        <!-- Keypad Button -->
+        <FrameLayout
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#256E72"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:contentDescription="Keypad"
+                android:src="@drawable/ic_search"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <!-- Mute Mic Button -->
+        <FrameLayout
+            android:id="@+id/btnMute"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#256E72"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:contentDescription="Mute"
+                android:src="@drawable/ic_mic"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <!-- End Call Button (Red) -->
+        <FrameLayout
+            android:id="@+id/btnEndCall"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_circle_red"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:contentDescription="End Call"
+                android:src="@drawable/ic_call_end"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <!-- Speaker Button -->
+        <FrameLayout
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:backgroundTint="#256E72"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:contentDescription="Speaker"
+                android:src="@drawable/ic_search"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
